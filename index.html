@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>সাপ্তাহিক মনিং রিপোর্ট </title>
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="./images/logo.png" type="image/x-icon" />
+  <!-- Google font -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600&display=swap" rel="stylesheet" />
+  <!-- Custom stylesheet -->
+  <link rel="stylesheet" href="./style.css" />
+
+  </style>
+</head>
+
+<body>
+  <div class="123"><p>সাপ্তাহিক মনিং রিপোর্ট</p>
+        <p>রিজার্ভ অফিস, নোয়াখালী</p></div>
+ <div class="container">
+        
+       
+            
+
+            <table border="1">
+              <form name="submit-to-google-sheet">
+                <div>
+            <div>তারিখ:<input type="date" name="date"> </div>
+            </div>
+            <div>
+              <div></div>
+            <div>থানা/ইউনিটের নাম:<select name="unit">
+              <option>সুধারাম মডেল থানা</option>
+              <option>বেগমগঞ্জ মডেল থানা</option>
+            </select>
+            </td>
+            </div>
+                <th>
+                  <tr><td>ক্রম</td>
+                  <td>পদবি</td>
+                  <td>কর্মরত</td>
+                  <td class="td3">আগমনের জন্য অপেক্ষমান</td>
+                  <td class="td3">প্রস্থানের জন্য অপেক্ষমান</td>
+                  <td>ছুটি</td>
+                  <td>অতিবাস</td>
+                  <td>গড় হাজির</td>
+                  <td>মন্তব্য</td>
+                </tr>                  
+                </th>
+                <tbody>
+                  <tr>
+                    <td>১</td>
+                    <td>ইন্সপেক্টর (নিরস্ত্র)</td>
+                    <td><input type="number" name="ins1ub"></td>
+                    <td><input type="number" name="ins2ub"></td>
+                    <td><input type="number" name="ins3ub"></td>
+                    <td><input type="number" name="ins4ub"></td>
+                    <td><input type="number" name="ins5ub"></td>
+                    <td><input type="number" name="ins6ub"></td>
+                    <td><input type="text" name="ins1ub"></td>
+                  </tr>
+                  <tr>
+                    <td>২</td>
+                    <td>ইন্সপেক্টর (সশস্ত্র)</td>
+                    <td><input type="number" name="ins1ab"></td>
+                    <td><input type="number" name="ins2ab"></td>
+                    <td><input type="number" name="ins3ab"></td>
+                    <td><input type="number" name="ins4ab"></td>
+                    <td><input type="number" name="ins5ab"></td>
+                    <td><input type="number" name="ins6ab"></td>
+                    <td><input type="text" name="ins1ab"></td>
+                  </tr>
+                  <tr>
+                    <td>৩</td>
+                    <td>ইন্সপেক্টর (টিআই)</td>
+                    <td><input type="number" name="ins1ti"></td>
+                    <td><input type="number" name="ins2ti"></td>
+                    <td><input type="number" name="ins3ti"></td>
+                    <td><input type="number" name="ins4ti"></td>
+                    <td><input type="number" name="ins5ti"></td>
+                    <td><input type="number" name="ins6ti"></td>
+                    <td><input type="text" name="ins1ti"></td>
+                  </tr>
+                  <tr>
+                    <td>৪</td>
+                    <td>এসআই (নিরস্ত্র)</td>
+                    <td><input type="number" name="si1ub"></td>
+                    <td><input type="number" name="si2ub"></td>
+                    <td><input type="number" name="si3ub"></td>
+                    <td><input type="number" name="si4ub"></td>
+                    <td><input type="number" name="si5ub"></td>
+                    <td><input type="number" name="si6ub"></td>
+                    <td><input type="text" name="si1ub"></td>
+                  </tr>
+
+                </tbody>
+                <input type="submit" name="submit">
+                <span id="success"></span>
+              </form>
+              
+            </table>
+  
+
+<script>
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbwao3WG1pseHHVoEnlh_voS4im7wJXRJ7E5bhFOv7jxaUc7f8cPz-F0v-YURJSH5R_6/exec'
+  const form = document.forms['submit-to-google-sheet']
+
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => console.log('Success!', response))
+      .catch(error => console.error('Error!', error.message))
+  })
+</script>
+         
+
+        
+</body>
+
+</html>
